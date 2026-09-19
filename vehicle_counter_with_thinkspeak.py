@@ -1,18 +1,5 @@
-"""
 Smart Traffic Light — Vehicle Counter with Bounding Box Visualization
 ========================================================================
-New features added on top of your working script:
-  1. Bounding boxes + class labels + confidence drawn on each image (results[0].plot())
-  2. Annotated images displayed inline in Colab AND saved to disk (annotated_frames/)
-  3. Per-class vehicle breakdown (car/motorcycle/bus/truck counts, not just total)
-  4. Confidence threshold so low-confidence junk detections don't get counted
-  5. Timestamped filenames so you build a visual history you can review later
-
-Security note: swap THINGSPEAK_WRITE_KEY below for the Colab Secrets version
-(see secure_thingspeak_uploader.py) when you're ready -- it's still hardcoded
-here to keep this diff focused on the bounding-box feature.
-"""
-
 from ultralytics import YOLO
 import requests
 import time
