@@ -27,17 +27,9 @@ busier roads get more green time.
 ## Channel access
 
 This channel is **private** — going to `https://thingspeak.com/channels/3236956`
-while logged out (or logged in as a non-authorized user) correctly shows
-**"This channel is not public"**, as in the screenshot below. Only accounts added
-under **Sharing → Share channel view only with the following users** can open the
-authenticated view at:
-
-```
+**"This channel is not public"**, **Sharing → Share channel view only with the following users**
 https://thingspeak.com/channels/3236956/private_show
 ```
-
-This confirms the private-access setup is working as intended — the channel is
-reachable only by whoever is explicitly authorized, or by the API keys.
 
 | View | URL | Who can open it |
 |---|---|---|
@@ -46,10 +38,6 @@ reachable only by whoever is explicitly authorized, or by the API keys.
 | Data write | `api.thingspeak.com/update` | Anyone holding the **Write API Key** |
 | Data read | `api.thingspeak.com/channels/3236956/fields/1/last.txt` | Anyone holding the **Read API Key** |
 
-**Important:** the Sharing setting controls who can view the *dashboard*. It does
-**not** protect the *API keys* — anyone who has a valid Write/Read key can push or
-pull data regardless of the Sharing list. That's why key rotation and secret
-storage (below) matter just as much as the Sharing setting.
 
 ---
 
@@ -59,7 +47,7 @@ storage (below) matter just as much as the Sharing setting.
 project/
 ├── README.md                          ← this file
 ├── colab/
-│   └── vehicle_counter_with_boxes.py  ← YOLO detection + bounding boxes + ThingSpeak upload
+│   └── vehicle_counter_with_thinkspeak.py  ← YOLO detection + bounding boxes + ThingSpeak upload
 ├── firmware/
 │   ├── traffic_controller.ino         ← ESP32 signal controller
 │   └── secrets.h                      ← WiFi + ThingSpeak credentials (NOT committed to git)
